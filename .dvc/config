@@ -1,0 +1,4 @@
+[core]
+    no_scm = True
+['remote "model1.pth"']
+    url = gdrive://1PkU39Mqsb_dB343iGaDefd4HSvm_AJmz

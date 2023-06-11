@@ -1,0 +1,4 @@
+outs:
+- md5: e73bf0df90c309f9196e19b53811b24b
+  size: 956074
+  path: model3.pth
