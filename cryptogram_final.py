@@ -4,15 +4,12 @@
 
 
 # import necessary packages
-from tqdm import tqdm
-import numpy as np
+
 import torch
 import torch.nn as nn
-import torch.optim as optim
-import torch.utils.data as data
-import torchvision.transforms as transforms
+
 import medmnist
-from medmnist import INFO, Evaluator
+from medmnist import INFO
 
 # Define the CNN class that inherits from the nn.Module class
 class CNN(nn.Module):
@@ -466,7 +463,6 @@ for r in range(10):
     print("\nReference Point matches the point",num,"in the cycle")
 end_time = time.time()
 print("Time taken:", end_time - start_time)
-
 
 
 
