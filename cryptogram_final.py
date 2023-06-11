@@ -2,9 +2,12 @@
 # coding: utf-8
 
 
+
 # import necessary packages
+
 import torch
 import torch.nn as nn
+
 import medmnist
 from medmnist import INFO
 
@@ -88,10 +91,6 @@ m1 = torch.load('model1.pth')
 m2 = torch.load('model2.pth')
 m3 = torch.load('model3.pth')
 
-
-m1
-
-
 w1 = []
 w2 = []
 w3 = []
@@ -116,12 +115,6 @@ for key in m3:
         w3.append(int((tensor.view(-1)[i]+1)* 100000)) 
         #w3.append(int(tensor.view(-1)[i] ))  
     
-
-
-
-w1
-
-
 
 from dataclasses import dataclass
 import random
@@ -322,7 +315,6 @@ class Point:
 #             return Point(self.x.value, (-1 * self.y).value, self.curve)
     
 
-
 # Parameters for the Elliptic Curve being used i.e y² = x³ + 2x + 2
 p:int=(0xffffffff00000001000000000000000000000000ffffffffffffffffffffffff)
 #p: int=(0x080000000000000000000000000000000000000000000000000000001)
@@ -384,7 +376,6 @@ R3 = r3 * nP
 #print("R:",R1,R2,R3)
 
 
-
 Z1 = []
 Z2 = []
 Z3 = []
@@ -421,7 +412,12 @@ for i in range(100):
 #Rsum
 Rsum = R1 + R2 + R3
 
+
+# In[10]:
+
+
 Rsum
+
 
 referencePoint=[]
 
@@ -431,7 +427,7 @@ for i in range(30):
     print("\n")
     
 basePoint = G
-end_time = time.time()
+
 
 
 
@@ -446,7 +442,6 @@ while check == False:
         check = True
     points.append(temp)
 print("Length of cycle:",len(points),'\n')
-
 
 
 import time
@@ -466,4 +461,7 @@ for r in range(10):
     print("\nReference Point matches the point",num,"in the cycle")
 end_time = time.time()
 print("Time taken:", end_time - start_time)
+
+
+
 
