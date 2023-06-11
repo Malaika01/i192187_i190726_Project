@@ -427,9 +427,6 @@ for i in range(30):
     print("\n")
     
 basePoint = G
-end_time = time.time()
-
-
 
 
 
