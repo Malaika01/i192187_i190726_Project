@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
 
 
 # import necessary packages
@@ -95,16 +94,6 @@ m1 = torch.load('model1.pth')
 m2 = torch.load('model2.pth')
 m3 = torch.load('model3.pth')
 
-
-# In[2]:
-
-
-m1
-
-
-# In[3]:
-
-
 w1 = []
 w2 = []
 w3 = []
@@ -129,16 +118,6 @@ for key in m3:
         w3.append(int((tensor.view(-1)[i]+1)* 100000)) 
         #w3.append(int(tensor.view(-1)[i] ))  
     
-
-
-# In[80]:
-
-
-w1
-
-
-# In[4]:
-
 
 from dataclasses import dataclass
 import random
@@ -339,10 +318,6 @@ class Point:
 #             return Point(self.x.value, (-1 * self.y).value, self.curve)
     
 
-
-# In[5]:
-
-
 # Parameters for the Elliptic Curve being used i.e y² = x³ + 2x + 2
 p:int=(0xffffffff00000001000000000000000000000000ffffffffffffffffffffffff)
 #p: int=(0x080000000000000000000000000000000000000000000000000000001)
@@ -357,8 +332,6 @@ B=2
 curve256 = EllipticCurve(A,B,field)
 I = Point(None,None,curve256)
 
-
-# In[6]:
 
 
 # G(0,1)
@@ -406,9 +379,6 @@ R3 = r3 * nP
 #print("R:",R1,R2,R3)
 
 
-# In[7]:
-
-
 Z1 = []
 Z2 = []
 Z3 = []
@@ -419,15 +389,12 @@ for i in range(100):
     #print(Z1[i])
 
 
-# In[8]:
 
 
 for i in range(100):
     #print(w2[i])
     Z2.append(abs(r2 + w2[i]) * G)
 
-
-# In[9]:
 
 
 #nr = -r3 + w3
@@ -455,9 +422,6 @@ Rsum = R1 + R2 + R3
 Rsum
 
 
-# In[11]:
-
-
 referencePoint=[]
 
 for i in range(30):
@@ -470,7 +434,6 @@ end_time = time.time()
 print("Time taken:", end_time - start_time)
 
 
-# In[12]:
 
 
 #Cycle of Ps
@@ -484,9 +447,6 @@ while check == False:
         check = True
     points.append(temp)
 print("Length of cycle:",len(points),'\n')
-
-
-# In[13]:
 
 
 import time
@@ -507,8 +467,6 @@ for r in range(10):
 end_time = time.time()
 print("Time taken:", end_time - start_time)
 
-
-# In[ ]:
 
 
 
