@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+    .card {
+        overflow: hidden;
+        background-color: #ffffffb3;
+        border-radius: 30px;
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.65);
+        border: 3px solid #ccc;
+    }
+    
+    .btn-primary {
+        background-color: #2B3467;
+        border-color: #000000;
+        transition: box-shadow 0.4s ease;
+    }
+    
+    .btn-primary:hover {
+        background-color: #2B3467;
+        box-shadow: 0 0 8px 7px #ff6384;
+    }
+</style>
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="col-md-6 col-lg-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <h2>Aggregation complete!</h2>
+                <button type="button" class="btn btn-primary mt-3" onclick="window.location.href='/admin_home'">Go back to Admin Homepage</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

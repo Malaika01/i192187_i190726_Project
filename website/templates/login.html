@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block content %}
+
+<style>
+.card {
+    overflow: hidden;
+    background-color: #ffffffb3;
+    border-radius: 30px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.65);
+    border: 3px solid #ccc;
+}
+
+.btn-primary {
+    background-color: #2B3467;
+    border-color: #000000;
+    transition: box-shadow 0.4s ease;
+}
+
+.btn-primary:hover {
+    background-color: #2B3467;
+    box-shadow: 0 0 8px 7px #ff6384;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-70%);
+    }
+}
+
+.animate {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: marquee 7s linear infinite;
+}
+
+.logo img {
+    width: 125px;
+    height: 125px;
+    margin-right: 100px;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+
+</style>
+
+
+<img src="..\static\logo.png" class="img-fluid d-block mx-auto mb-3" alt="Image description" width="300" height="300">
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 30vh; margin-top: 30px;">
+    <div class="col-md-6 col-lg-4" style="padding-top: 10px;">
+        <div class="card">
+            <div class="card-body">
+                <div class="text-center mb-3">
+                    <button type="button" class="btn btn-primary" onclick="window.location.href='/hospital_login'">Login as a Hospital</button>
+                </div>
+                <div class="text-center mb-3">
+                    <button type="button" class="btn btn-primary" onclick="window.location.href='/admin_login'">Login as Admin</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="partners" class="mb-12 lg:mb-20">
+    <h1 class="font-bold text-3xl text-brand-accent text-center lg:text-4xl">
+        Our Partners
+    </h1>
+    <div class="border border-brand-primary border-l-0 border-r-0 container lg:p-20 mt-6 overflow-hidden p-12 relative">
+        <div class="flex animate absolute left-0">
+            <div class="logo">
+                <div class="image-container">
+                    <img src="..\static\icon_FAST.png" alt="Image1" style="width: 102px; height: 102px;">
+                </div>
+                <div class="image-container">
+                    
+                    <img src="..\static\icon_SiberKoza.png" alt="Image2" style="width: 100px; height: 100px;">
+                </div>
+                <div class="image-container">
+                    
+                    <img src="..\static\icon_Cryptech.png" alt="Image3" style="width: 98px; height: 98px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+
+

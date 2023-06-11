@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}
+    About Us
+{% endblock %}
+
+{% block content %}
+    <style>
+        .container {
+            display: flex;
+            padding: 20px;
+        }
+
+        .left-pane {
+            width: 50%;
+        }
+
+        .right-pane {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .right-pane img {
+            max-width: 300px;
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+
+    <div class="container">
+        <div class="left-pane">
+            <img src="/static/logo.png" alt="Upper Left Image" class="img-fluid" style="max-width: 150px;">
+            <h1><em>Curatio Morbi</em> at a Glance</h1>
+            <p><b>Welcome to our website!</b> Curatio Morbi, which translates to Treatment of diseases, is a cryptographic solution based on Elliptic curve cryptography and Diffie-Hellman algorithm, to secure model weights during aggregation. This approach is computationally efficient and does not reduce the overall model accuracy.</p>
+            <p>Our website provides a platform where hospitals can upload their trained models. Once the aggregated model is ready, hospitals can download it. The models are aggregated by the server. We assure the security of the shared model through our highly sophisticated encryption algorithms.</p>
+            <p style="color:#02266F;"><b>We aim to reduce the patient's data sharing concerns of hospitals!</b> </p>
+        </div>
+        <div class="right-pane">
+            <img src="/static/1.png" alt="Right Image">
+            <img src="/static/2.gif" alt="Animated GIF">
+        </div>
+    </div>
+{% endblock %}

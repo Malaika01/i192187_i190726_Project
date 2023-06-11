@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Admin Home
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .card {
+        overflow: hidden;
+        background-color: #ffffffb3;
+        border-radius: 30px;
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.65);
+        border: 3px solid #ccc;
+    }
+    
+    .btn-primary {
+        background-color: #2B3467;
+        border-color: #000000;
+        transition: box-shadow 0.4s ease;
+    }
+    
+    .btn-primary:hover {
+        background-color: #2B3467;
+        box-shadow: 0 0 8px 7px #ff6384;
+    }
+    
+    .loader {
+        display: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border-top: 3px solid rgba(0, 0, 0, 0.3);
+        border-right: 3px solid rgba(0, 0, 0, 0.3);
+        border-bottom: 3px solid rgba(0, 0, 0, 0.3);
+        border-left: 3px solid #000000;
+        animation: spin 1s infinite linear;
+    }
+    
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="col-md-6 col-lg-4">
+        <div class="card text-center">
+            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                <div class="d-grid gap-2">
+                    <button type="button" class="btn btn-primary mb-3" onclick="loadAggregateModel()">Aggregate Model</button>
+                    <button type="button" class="btn btn-primary mb-3" onclick="window.location.href='/view_pending_requests'">View Pending Hospital Requests</button>
+                </div>
+                <div class="loader" id="loader"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function loadAggregateModel() {
+        var loader = document.getElementById("loader");
+        loader.style.display = "block";
+        setTimeout(function() {
+            window.location.href = '/aggregate_model'; // Load the page after a delay, replace with actual loading logic
+        }, 3000); // Simulating a 3-second loading time, replace with actual loading logic
+    }
+</script>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'Malaika', url: 'https://github.com/Malaika01/MLOps-Project.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                script {
+                    // Define the environment paths
+                    def envPaths = 'C:\\Users\\I LAPTOP.PK\\AppData\\Local\\Programs\\Python\\Python39\\Scripts;C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files (x86)\\nodejs\\;C:\\ProgramData\\chocolatey\\bin;;C:\\Program Files\\Docker\\Docker\\resources\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+
+                    // Set the environment paths
+                    env.PATH = envPaths
+
+                    // Execute the pip install command
+                    bat 'pip install tqdm numpy torch medmnist torchvision dataclasses pylint'
+                   
+                    // Run your Python script or commands here
+                       bat "pylint --disable=C,R,W0104 cryptogram_final.py"
+
+                }
+            }
+        }
+        stage('Test') {
+            steps {
+                script {
+                    // Define the environment paths
+                    def envPaths = 'C:\\Users\\I LAPTOP.PK\\AppData\\Local\\Programs\\Python\\Python39;C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files (x86)\\nodejs\\;C:\\ProgramData\\chocolatey\\bin;;C:\\Program Files\\Docker\\Docker\\resources\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+
+                    // Set the environment paths
+                    env.PATH = envPaths
+
+                    // Execute the pip install command
+                    bat 'python unit_tests.py'
+              
+
+                }
+            }
+        }
+    }
+}
