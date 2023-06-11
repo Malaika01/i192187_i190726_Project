@@ -1,19 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
 
 # import necessary packages
-from tqdm import tqdm
-import numpy as np
 import torch
 import torch.nn as nn
-import torch.optim as optim
-import torch.utils.data as data
-import torchvision.transforms as transforms
 import medmnist
-from medmnist import INFO, Evaluator
+from medmnist import INFO
 
 # Define the CNN class that inherits from the nn.Module class
 class CNN(nn.Module):
@@ -96,13 +89,7 @@ m2 = torch.load('model2.pth')
 m3 = torch.load('model3.pth')
 
 
-# In[2]:
-
-
 m1
-
-
-# In[3]:
 
 
 w1 = []
@@ -131,13 +118,9 @@ for key in m3:
     
 
 
-# In[80]:
-
 
 w1
 
-
-# In[4]:
 
 
 from dataclasses import dataclass
@@ -340,9 +323,6 @@ class Point:
     
 
 
-# In[5]:
-
-
 # Parameters for the Elliptic Curve being used i.e y² = x³ + 2x + 2
 p:int=(0xffffffff00000001000000000000000000000000ffffffffffffffffffffffff)
 #p: int=(0x080000000000000000000000000000000000000000000000000000001)
@@ -357,8 +337,6 @@ B=2
 curve256 = EllipticCurve(A,B,field)
 I = Point(None,None,curve256)
 
-
-# In[6]:
 
 
 # G(0,1)
@@ -406,8 +384,6 @@ R3 = r3 * nP
 #print("R:",R1,R2,R3)
 
 
-# In[7]:
-
 
 Z1 = []
 Z2 = []
@@ -419,15 +395,12 @@ for i in range(100):
     #print(Z1[i])
 
 
-# In[8]:
 
 
 for i in range(100):
     #print(w2[i])
     Z2.append(abs(r2 + w2[i]) * G)
 
-
-# In[9]:
 
 
 #nr = -r3 + w3
@@ -448,15 +421,7 @@ for i in range(100):
 #Rsum
 Rsum = R1 + R2 + R3
 
-
-# In[10]:
-
-
 Rsum
-
-
-# In[11]:
-
 
 referencePoint=[]
 
@@ -467,10 +432,7 @@ for i in range(30):
     
 basePoint = G
 end_time = time.time()
-print("Time taken:", end_time - start_time)
 
-
-# In[12]:
 
 
 #Cycle of Ps
@@ -485,8 +447,6 @@ while check == False:
     points.append(temp)
 print("Length of cycle:",len(points),'\n')
 
-
-# In[13]:
 
 
 import time
@@ -506,10 +466,4 @@ for r in range(10):
     print("\nReference Point matches the point",num,"in the cycle")
 end_time = time.time()
 print("Time taken:", end_time - start_time)
-
-
-# In[ ]:
-
-
-
 
