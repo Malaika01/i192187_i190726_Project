@@ -1,0 +1,84 @@
+
+{% extends "base.html" %}
+
+{%block title%} 
+    Login
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .container {
+        margin-top: 200px; /* Adjust the margin value as needed */
+    }
+    
+    .form-group {
+        text-align: center; /* Center-align the form fields */
+    }
+    
+    .form-control {
+        width: 30%; /* Adjust the width of the form fields */
+        margin: 0 auto; /* Center horizontally within the form-group */
+        background-color: #f3f5e4; /* Set the background color of the form fields */
+        border-color: #2B3467; /* Set the outline color of the form fields */
+    }
+    
+    .form-control:focus {
+        outline-color: #6c757d; /* Set the outline color when the field is focused */
+        box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.25); /* Add a shadow when the field is focused */
+    }
+    
+    .btn-primary {
+        background-color: #2B3467;
+        border-color: #000000;
+        transition: box-shadow 0.3s ease;
+        display: block; /* Make the button a block-level element */
+        margin: 0 auto; /* Center horizontally */
+        margin-top: -20px;
+        text-align: center; /* Center-align the button text */
+    }
+    
+    .btn-primary:hover {
+        background-color: #2B3467;
+        box-shadow: 0 0 8px 7px #5c6cc6; /* 0 0 blur_radius spread_radius color*/
+        /*animation: flicker 1s infinite;*/ 
+    }
+    
+    .form-container {
+        margin-top: 70px; /* Add margin to move the form down */
+    }
+    
+    h3 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+</style>
+
+
+<form method = "POST">
+    <h3 align = "center">Hospital Portal</h3>
+    <div class = "form-group">
+        <input 
+            type = "email" 
+            class = "form-control" 
+            id = "email"
+            name = "email" 
+            placeholder = "Email Address"
+        />
+    </div>
+
+    <div class = "form-group">
+        <input 
+            type = "password" 
+            class = "form-control" 
+            id = "password"
+            name = "password" 
+            placeholder = "Password"
+        />
+    </div>
+
+    
+    <br />
+    <button type = "submit" class = "btn btn-primary">Login</button>
+</form>
+{% endblock %}

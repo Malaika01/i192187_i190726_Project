@@ -46,8 +46,8 @@ def create_database(app):
             db.create_all()
             print('Database created!')
             from .models import User
-            # admin = User(email = 'admin@gmail.com', hospitalName = 'admin', password = generate_password_hash('1234567', method = 'sha256'))
-            # db.session.add(admin)
+            admin = User(email = 'admin@gmail.com', hospitalName = 'admin', password = generate_password_hash('1234567', method = 'sha256'))
+            db.session.add(admin)
             db.session.commit()
 
 
