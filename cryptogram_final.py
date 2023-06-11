@@ -421,9 +421,7 @@ referencePoint=[]
 
 for i in range(30):
     referencePoint.append(Z1[i] + Z2[i] + Z3[i])
-    print("Reference point: \n",referencePoint[i])
-    print("\n")
-    
+  
 basePoint = G
 
 
@@ -438,7 +436,7 @@ while check == False:
     if(temp == I):
         check = True
     points.append(temp)
-print("Length of cycle:",len(points),'\n')
+
 
 
 import time
@@ -454,8 +452,7 @@ for r in range(10):
 #     weight1=(w1[r]/100000)
 #     weight2=(w2[r]/100000)
 #     weight3=(w3[r]/100000)
-    print(w1[r]+w2[r]+w3[r])
-    print("\nReference Point matches the point",num,"in the cycle")
+  
 end_time = time.time()
 print("Time taken:", end_time - start_time)
 
