@@ -428,7 +428,7 @@ for i in range(30):
     
 basePoint = G
 end_time = time.time()
-print("Time taken:", end_time - start_time)
+
 
 
 
