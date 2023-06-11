@@ -413,8 +413,6 @@ for i in range(100):
 Rsum = R1 + R2 + R3
 
 
-# In[10]:
-
 
 Rsum
 
@@ -427,7 +425,6 @@ for i in range(30):
     print("\n")
     
 basePoint = G
-
 
 
 
